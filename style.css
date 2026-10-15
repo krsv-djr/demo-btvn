@@ -1,0 +1,126 @@
+/* 1. MÀU SẮC VÀ THIẾT LẬP CHUNG (đổi màu ở đây là đổi cả trang) */
+:root {
+  --navy: #12306b;       /* xanh đậm theo đồng phục */
+  --navy-dark: #0c2150;
+  --mist: #eef3fb;       /* xanh rất nhạt cho nền xen kẽ */
+  --line: #d5deee;
+  --text: #1c2740;
+  --max: 1080px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+body {
+  margin: 0;
+  font-family: "Be Vietnam Pro", "Segoe UI", Arial, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--text);
+  background: #fff;
+}
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 1.25rem; }
+h1, h2 { line-height: 1.2; margin: 0 0 .75rem; }
+a { color: var(--navy); }
+:focus-visible { outline: 3px solid var(--navy); outline-offset: 2px; }
+
+/* 2. ĐẦU TRANG VÀ MENU */
+.site-header { position: sticky; top: 0; z-index: 10; background: #fff; border-bottom: 1px solid var(--line); }
+.bar { display: flex; align-items: center; justify-content: space-between; min-height: 64px; }
+.brand { font-weight: 700; color: var(--navy); text-decoration: none; }
+.nav a { margin-left: 1.5rem; color: var(--text); font-weight: 500; text-decoration: none; }
+.nav a:hover { color: var(--navy); text-decoration: underline; }
+.menu-btn {
+  display: none; padding: .5rem 1rem; font: inherit; font-weight: 500;
+  color: var(--navy); background: #fff; border: 1px solid var(--navy); border-radius: 4px; cursor: pointer;
+}
+
+/* 3. BANNER CHÍNH */
+.hero { background: var(--navy); color: #fff; padding: 4.5rem 0 0; }
+.hero :focus-visible { outline-color: #fff; }
+.hero h1 { font-size: clamp(2.2rem, 6.5vw, 4rem); font-weight: 700; letter-spacing: -0.02em; }
+.lead { max-width: 36rem; margin: 0; font-size: 1.15rem; opacity: .92; }
+.btn {
+  display: inline-block; margin-top: 1.75rem; padding: .8rem 1.5rem;
+  background: #fff; color: var(--navy); font-weight: 700; text-decoration: none; border-radius: 4px;
+}
+.btn:hover { background: var(--mist); }
+
+/* 3 lối vào cho học sinh / giáo viên / phụ huynh */
+.audience {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  list-style: none; margin: 3.5rem 0 0; padding: 0;
+  border-top: 1px solid rgba(255, 255, 255, .35);
+}
+.audience li + li { border-left: 1px solid rgba(255, 255, 255, .35); padding-left: 1.5rem; }
+.audience a { display: block; padding: 1.5rem 1rem 1.75rem 0; color: #fff; text-decoration: none; }
+.audience strong { display: block; font-size: 1.2rem; }
+.audience span { font-size: .95rem; opacity: .85; }
+.audience a:hover strong { text-decoration: underline; }
+
+/* 4. CÁC PHẦN NỘI DUNG */
+.section { padding: 4rem 0; }
+.section.alt { background: var(--mist); }
+.section h2 { color: var(--navy); font-size: clamp(1.6rem, 4vw, 2.25rem); }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+.values { list-style: none; margin: 0; padding: 0; }
+.values li { padding: .25rem 0 .25rem 1rem; margin-bottom: 1rem; border-left: 3px solid var(--navy); }
+.values strong { display: block; color: var(--navy); }
+
+/* Tin tức */
+.tabs { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1rem 0 1.5rem; }
+.tab {
+  padding: .5rem 1rem; font: inherit; color: var(--navy);
+  background: #fff; border: 1px solid var(--navy); border-radius: 999px; cursor: pointer;
+}
+.tab[aria-pressed="true"] { background: var(--navy); color: #fff; }
+.news { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.news li { display: grid; grid-template-columns: 7.5rem 1fr; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--line); }
+.news li[hidden] { display: none; }  /* cần dòng này để tin bị lọc thật sự biến mất */
+.news time { color: #4a5a7d; }
+.news a { font-weight: 500; }
+
+/* Thư viện ảnh (ô màu giữ chỗ) */
+.gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: .75rem; margin-top: 1.25rem; }
+.ph { margin: 0; aspect-ratio: 4 / 3; display: flex; align-items: flex-end; padding: .75rem; background: var(--navy); color: #fff; font-size: .9rem; }
+.ph:nth-child(2n) { background: #2a4a8c; }
+.ph:nth-child(3n) { background: var(--navy-dark); }
+.gallery img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+
+/* Biểu mẫu liên hệ */
+.field { margin-bottom: .75rem; }
+.form label { display: block; font-weight: 500; }
+.form input, .form select, .form textarea {
+  width: 100%; margin-top: .35rem; padding: .7rem .8rem;
+  font: inherit; background: #fff; border: 1px solid #8f9fc0; border-radius: 4px;
+}
+.error { min-height: 1.2em; margin: .25rem 0 0; color: #b3261e; font-size: .9rem; }
+.form button {
+  padding: .8rem 1.5rem; font: inherit; font-weight: 700; color: #fff;
+  background: var(--navy); border: 0; border-radius: 4px; cursor: pointer;
+}
+.form button:hover { background: var(--navy-dark); }
+.ok { color: #1b6b3a; font-weight: 500; }
+
+/* Bản đồ nhúng từ Google Maps */
+.map { margin-top: 1.25rem; border: 1px solid var(--line); }
+.map iframe { display: block; width: 100%; height: 260px; border: 0; }
+
+/* 5. CHÂN TRANG */
+.site-footer { padding: 1.5rem 0; background: var(--navy-dark); color: #fff; font-size: .95rem; }
+
+/* 6. ĐIỆN THOẠI (màn hình hẹp): đổi bố cục cho dễ dùng */
+@media (max-width: 720px) {
+  .menu-btn { display: inline-block; }
+  .nav {
+    display: none; position: absolute; top: 100%; left: 0; right: 0;
+    padding: .5rem 1.25rem 1rem; background: #fff; border-bottom: 1px solid var(--line);
+  }
+  .nav.open { display: block; }
+  .nav a { display: block; margin: 0; padding: .75rem 0; }
+  .hero { padding-top: 3rem; }
+  .audience { grid-template-columns: 1fr; margin-top: 2.5rem; }
+  .audience li + li { border-left: 0; padding-left: 0; border-top: 1px solid rgba(255, 255, 255, .35); }
+  .two { grid-template-columns: 1fr; gap: 2rem; }
+  .gallery { grid-template-columns: repeat(2, 1fr); }
+  .news li { grid-template-columns: 1fr; gap: .25rem; }
+  .section { padding: 3rem 0; }
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trường THPT Nguyễn Du - Quận 10, TP.HCM</title>
+  <!-- Phông Be Vietnam Pro hỗ trợ đầy đủ tiếng Việt. Nếu không có Internet, trình duyệt dùng phông dự phòng. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ĐẦU TRANG: tên trường và menu -->
+  <header class="site-header">
+    <div class="wrap bar">
+      <a class="brand" href="#trang-chu">THPT Nguyễn Du</a>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav">Menu</button>
+      <nav id="nav" class="nav" aria-label="Menu chính">
+        <a href="#gioi-thieu">Giới thiệu</a>
+        <a href="#tin-tuc">Tin tức</a>
+        <a href="#thu-vien">Thư viện ảnh</a>
+        <a href="#lien-he">Liên hệ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- TRANG CHỦ: banner chính + nút kêu gọi hành động + 3 lối vào theo đối tượng -->
+    <section id="trang-chu" class="hero">
+      <div class="wrap">
+        <h1>Trường THPT Nguyễn Du</h1>
+        <p class="lead">Quận 10, Thành phố Hồ Chí Minh. Thông tin dành cho học sinh, giáo viên và phụ huynh.</p>
+        <a class="btn" href="#tin-tuc">Xem thông báo mới</a>
+
+        <ul class="audience">
+          <li><a href="#tin-tuc" data-filter="hoc-sinh"><strong>Học sinh</strong><span>Lịch học, thông báo, hoạt động</span></a></li>
+          <li><a href="#tin-tuc" data-filter="giao-vien"><strong>Giáo viên</strong><span>Kế hoạch, tập huấn, họp chuyên môn</span></a></li>
+          <li><a href="#tin-tuc" data-filter="phu-huynh"><strong>Phụ huynh</strong><span>Họp phụ huynh, học phí, liên lạc</span></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- GIỚI THIỆU: thay bằng nội dung thật của trường -->
+    <section id="gioi-thieu" class="section">
+      <div class="wrap two">
+        <div>
+          <h2>Giới thiệu</h2>
+          <p>Đây là đoạn giới thiệu mẫu về trường. Hãy thay bằng lịch sử, sứ mệnh và những điểm nổi bật thật của Trường THPT Nguyễn Du.</p>
+          <p>Bạn có thể viết thêm đoạn nữa về chương trình học, câu lạc bộ và các hoạt động của học sinh.</p>
+        </div>
+        <ul class="values">
+          <li><strong>Học tập</strong> Mô tả ngắn về việc dạy và học (nội dung mẫu).</li>
+          <li><strong>Rèn luyện</strong> Mô tả ngắn về hoạt động ngoại khóa (nội dung mẫu).</li>
+          <li><strong>Kết nối</strong> Mô tả ngắn về sự phối hợp với phụ huynh (nội dung mẫu).</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- TIN TỨC: mỗi tin có data-for = đối tượng liên quan. Đây là tin mẫu, thay bằng tin thật. -->
+    <section id="tin-tuc" class="section alt">
+      <div class="wrap">
+        <h2>Tin tức và thông báo</h2>
+        <div class="tabs">
+          <button class="tab" data-filter="tat-ca" aria-pressed="true">Tất cả</button>
+          <button class="tab" data-filter="hoc-sinh" aria-pressed="false">Học sinh</button>
+          <button class="tab" data-filter="giao-vien" aria-pressed="false">Giáo viên</button>
+          <button class="tab" data-filter="phu-huynh" aria-pressed="false">Phụ huynh</button>
+        </div>
+        <ul class="news">
+          <li data-for="hoc-sinh"><time>15/10/2026</time><a href="#">Thông báo lịch kiểm tra giữa học kỳ I</a></li>
+          <li data-for="phu-huynh"><time>12/10/2026</time><a href="#">Kế hoạch họp phụ huynh đầu năm</a></li>
+          <li data-for="giao-vien"><time>10/10/2026</time><a href="#">Tập huấn chuyên môn cho giáo viên</a></li>
+          <li data-for="hoc-sinh phu-huynh"><time>05/10/2026</time><a href="#">Hoạt động ngoại khóa tháng 10</a></li>
+          <li data-for="phu-huynh"><time>01/10/2026</time><a href="#">Thông báo nộp học phí</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- THƯ VIỆN ẢNH: ô màu giữ chỗ. Khi có ảnh thật, thay <figure> bằng <img src="anh1.jpg" alt="Mô tả ảnh"> -->
+    <section id="thu-vien" class="section">
+      <div class="wrap">
+        <h2>Thư viện ảnh</h2>
+        <div class="gallery">
+          <figure class="ph"><figcaption>Ảnh 1</figcaption></figure>
+          <figure class="ph"><figcaption>Ảnh 2</figcaption></figure>
+          <figure class="ph"><figcaption>Ảnh 3</figcaption></figure>
+          <figure class="ph"><figcaption>Ảnh 4</figcaption></figure>
+          <figure class="ph"><figcaption>Ảnh 5</figcaption></figure>
+          <figure class="ph"><figcaption>Ảnh 6</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIÊN HỆ: thông tin + biểu mẫu -->
+    <section id="lien-he" class="section alt">
+      <div class="wrap two">
+        <div>
+          <h2>Liên hệ</h2>
+          <p>Địa chỉ: Đường Đồng Nai, Cư xá Bắc Hải, Phường 15, Quận 10, TP. Hồ Chí Minh</p>
+          <p>Điện thoại: XXXXXXXXXX</p>
+          <p>Email: *@gmail.com</p>
+
+          <!-- BẢN ĐỒ: nhúng từ Google Maps. Đổi phần sau "q=" nếu muốn chỉ tới địa chỉ khác. Cần Internet để hiển thị. -->
+          <div class="map">
+            <iframe title="Bản đồ vị trí Trường THPT Nguyễn Du"
+              src="https://maps.google.com/maps?q=Tr%C6%B0%E1%BB%9Dng+THPT+Nguy%E1%BB%85n+Du,+%C4%90%C6%B0%E1%BB%9Dng+%C4%90%E1%BB%93ng+Nai,+Qu%E1%BA%ADn+10,+H%E1%BB%93+Ch%C3%AD+Minh&amp;hl=vi&amp;z=16&amp;output=embed"
+              loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          </div>
+          <p><a href="https://www.google.com/maps/search/?api=1&amp;query=Tr%C6%B0%E1%BB%9Dng+THPT+Nguy%E1%BB%85n+Du,+%C4%90%C6%B0%E1%BB%9Dng+%C4%90%E1%BB%93ng+Nai,+Qu%E1%BA%ADn+10,+H%E1%BB%93+Ch%C3%AD+Minh" target="_blank" rel="noopener">Mở trong Google Maps</a></p>
+        </div>
+        <form id="contactForm" class="form" novalidate>
+          <div class="field">
+            <label for="ten">Họ và tên</label>
+            <input id="ten" name="ten" type="text" required>
+            <p class="error"></p>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required>
+            <p class="error"></p>
+          </div>
+          <div class="field">
+            <label for="vaitro">Bạn là</label>
+            <select id="vaitro" name="vaitro" required>
+              <option value="">Chọn một mục</option>
+              <option>Học sinh</option>
+              <option>Giáo viên</option>
+              <option>Phụ huynh</option>
+              <option>Khác</option>
+            </select>
+            <p class="error"></p>
+          </div>
+          <div class="field">
+            <label for="loinhan">Nội dung</label>
+            <textarea id="loinhan" name="loinhan" rows="4" required></textarea>
+            <p class="error"></p>
+          </div>
+          <button type="submit">Gửi tin nhắn</button>
+          <p class="ok" id="formStatus" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">© <span id="year"></span> Trường THPT Nguyễn Du, Quận 10, TP.HCM</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
